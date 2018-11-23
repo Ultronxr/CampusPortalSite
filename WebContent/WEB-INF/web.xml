@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>CampusPortalSite</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jhtml</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>indexAction</servlet-name>
+    <servlet-class>com.fc.cps.action.IndexAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>indexAction</servlet-name>
+    <url-pattern>/index.jhtml</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>indexNewsAction</servlet-name>
+    <servlet-class>com.fc.cps.action.IndexNewsAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>indexNewsAction</servlet-name>
+    <url-pattern>/indexNews.jhtml</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>userLoginAction</servlet-name>
+    <servlet-class>com.fc.cps.action.UserLoginAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userLoginAction</servlet-name>
+    <url-pattern>/userLogin.jhtml</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>userRegisterAction</servlet-name>
+    <servlet-class>com.fc.cps.action.UserRegisterAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userRegisterAction</servlet-name>
+    <url-pattern>/userRegister.jhtml</url-pattern>
+  </servlet-mapping>
+</web-app>

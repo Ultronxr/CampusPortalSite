@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	min-height:750px;
+	background: linear-gradient(to bottom, lightblue 0%,#ffffff 100%);
+}
+#title p{
+	text-align: center;
+	margin-top: 40px;
+	font-size: 30px;
+	color: #000000;
+	font-weight: bold;
+	font-family: 华文仿宋;
+}
+#date p{
+	text-align: center;
+	margin-top: 20px;
+	font-size: 20px;
+	color: #969696;
+	font-family: 微软雅黑;
+}
+#detail_content{
+	margin:30px 150px;
+	width: 80%;
+
+}
