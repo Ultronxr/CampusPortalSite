@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fc.cps.dao.UserDao;
 import com.fc.cps.dao.jdbc.UserDaoImpl;
 import com.fc.cps.entity.UserEntity;
+import com.fc.cps.global.VerifyCodeConstants;
 
 
 //@WebServlet("/LoginAction")
@@ -28,19 +29,24 @@ public class UserLoginAction extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter printWriter = response.getWriter();
-		boolean flag = false;
+		int flag = -1; //代表验证码验证不通过 且 账户密码验证不通过
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String code = request.getParameter("code");
+		
+		String real_code = VerifyCodeConstants.getCodeNumber();
+		if(real_code.toLowerCase().equals(code.toLowerCase()))
+			flag = 0; //代表验证码验证通过 且 账户密码验证不通过
 		
 		UserEntity userEntity = userDao.getUserEntityBySchoolId(username);
-		if(userEntity != null && userEntity.getPassword().equals(password)) {
-			flag = true;
+		if(flag==0 && userEntity != null && userEntity.getPassword().equals(password)) {
+			flag = 1; //代表验证码验证通过 且 账户密码验证通过
 			printWriter.print(1);
 			printWriter.flush();
 		}
 		
-		System.out.println("获取用户登录请求：username="+username+" password="+password+" 登录是否成功："+flag);
+		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag);
 		
 	}
 

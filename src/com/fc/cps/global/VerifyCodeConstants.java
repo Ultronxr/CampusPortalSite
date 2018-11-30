@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class VerifyCodeConstants {
+	
+	protected static String codeNumber;
 
 	// 验证码的字体库
 	protected static Font[] codeFont = { new Font("Times New Roman", Font.PLAIN, 30),
@@ -21,6 +23,14 @@ public class VerifyCodeConstants {
 
 	// 验证码的高度
 	protected static final Integer IMAGE_HEIGHT = 40;
+	
+	public static String getCodeNumber() {
+		return codeNumber;
+	}
+	
+	public static void setCodeNumber(String codeNumber) {
+		VerifyCodeConstants.codeNumber = codeNumber;
+	}
 
 	public static Font[] getCodeFont() {
 		return codeFont;

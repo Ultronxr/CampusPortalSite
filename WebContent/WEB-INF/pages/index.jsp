@@ -113,11 +113,12 @@
     			<li style="margin-bottom: 5px;"><p id="user_login_infos">每个选项都是必填的。</p></li>
     			<li><label>账户名</label><input type="text" id="user_login_username" name="user_login_username"></li>
     			<li><label>密码</label><input type="password" id="user_login_password" name="user_login_password"></li>
-    			<li><label>验证码</label><br/>
-    				<img src="" width="20px" height="10px"><br/>
+    			<li><label>验证码 &nbsp;&nbsp;</label>
+    				<img src="" onclick="refresh_verify_code()" width="100px" height="50px" id="user_login_code_img" name="user_login_code_img"><br/>
     				<input type="text" id="user_login_code" name="user_login_code"></li>
     		</ul>
     	</form>
+    	
     </div>
     <div id="user_register_div">
     	<form id="user_register_form">

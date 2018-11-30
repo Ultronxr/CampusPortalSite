@@ -36,4 +36,12 @@
     <servlet-name>userRegisterAction</servlet-name>
     <url-pattern>/userRegister.jhtml</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>verifyCodeAction</servlet-name>
+    <servlet-class>com.fc.cps.action.VerifyCodeAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>verifyCodeAction</servlet-name>
+    <url-pattern>/verifyCode.jhtml</url-pattern>
+  </servlet-mapping>
 </web-app>
