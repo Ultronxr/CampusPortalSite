@@ -5,9 +5,11 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fc.cps.dao.UserDao;
 import com.fc.cps.dao.jdbc.UserDaoImpl;
@@ -42,12 +44,23 @@ public class UserLoginAction extends HttpServlet {
 		UserEntity userEntity = userDao.getUserEntityBySchoolId(username);
 		if(flag==0 && userEntity != null && userEntity.getPassword().equals(password)) {
 			flag = 1; //代表验证码验证通过 且 账户密码验证通过
-			printWriter.print(1);
-			printWriter.flush();
 		}
 		
+		printWriter.print(flag);
+		printWriter.flush();
 		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag);
+		printWriter.close();
 		
+		if(flag == 1) {
+			HttpSession session = request.getSession();
+			session.setAttribute("UserEntity", "userEntity");
+			String sessionId = session.getId();
+			Cookie cookie = new Cookie("JSESSIONID", sessionId);
+			cookie.setPath(request.getContextPath());
+			response.addCookie(cookie);
+		}
+			request.getRequestDispatcher("index.jhtml").forward(request, response);
+			
 	}
 
 }

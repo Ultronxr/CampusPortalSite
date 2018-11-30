@@ -28,18 +28,11 @@ function user_login_dialog() {
 		    	var reg2 = /^[A-Za-z0-9_]{3,18}$/;
 		    	var reg3 = /^[A-Za-z0-9_]{4}$/;
 		    	
-		    	if(!reg1.test(user_username)){
-		    		$("#user_login_infos").css("color","red");
-		    		$("#user_login_infos").text("学号格式错误！");
-		    	}
-		    	else if(!reg2.test(user_password)){
-		    		$("#user_login_infos").css("color","red");
-		    		$("#user_login_infos").text("密码格式错误！");
-		    	}
-		    	else if(!reg3.test(user_code)){
-		    		$("#user_login_infos").css("color","red");
-		    		$("#user_login_infos").text("验证码格式错误！");
-		    	}
+		    	$("#user_login_infos").css("color","red");
+		    	
+		    	if(!reg1.test(user_username))      $("#user_login_infos").text("学号格式错误！");
+		    	else if(!reg2.test(user_password)) $("#user_login_infos").text("密码格式错误！");	
+		    	else if(!reg3.test(user_code))     $("#user_login_infos").text("验证码格式错误！");
 		    	else{
 		    		var md5_user_password = hex_md5(user_password);
 		    		var ajax_data={username:user_username,password:md5_user_password,code:user_code};
@@ -49,12 +42,8 @@ function user_login_dialog() {
 		    			data:ajax_data,
 		    			dataType:'json',
 		    			success:function(msg){
-		    				if(msg==1){
-		    					alert("1");
-		    					//window.location.href = "/CampusPortalSite/index.jhtml";
-		    				}else{
-		    					alert("登录后台出错，无法登录！");
-		    				}
+		    				if(msg==-1)     $("#user_login_infos").text("验证码错误！");
+		    				else if(msg==0) $("#user_login_infos").text("学号或密码错误！");
 		    			}
 		    		});
 		    	}

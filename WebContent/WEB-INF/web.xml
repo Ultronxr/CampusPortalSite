@@ -44,4 +44,7 @@
     <servlet-name>verifyCodeAction</servlet-name>
     <url-pattern>/verifyCode.jhtml</url-pattern>
   </servlet-mapping>
+  <session-config>
+        <session-timeout>15</session-timeout>
+  </session-config>
 </web-app>
