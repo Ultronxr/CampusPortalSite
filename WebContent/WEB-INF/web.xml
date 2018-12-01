@@ -4,6 +4,9 @@
   <welcome-file-list>
     <welcome-file>index.jhtml</welcome-file>
   </welcome-file-list>
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
   <servlet>
     <servlet-name>indexAction</servlet-name>
     <servlet-class>com.fc.cps.action.IndexAction</servlet-class>
@@ -37,6 +40,14 @@
     <url-pattern>/userRegister.jhtml</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>userLogoutAction</servlet-name>
+    <servlet-class>com.fc.cps.action.UserLogoutAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userLogoutAction</servlet-name>
+    <url-pattern>/userLogout.jhtml</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>verifyCodeAction</servlet-name>
     <servlet-class>com.fc.cps.action.VerifyCodeAction</servlet-class>
   </servlet>
@@ -44,7 +55,5 @@
     <servlet-name>verifyCodeAction</servlet-name>
     <url-pattern>/verifyCode.jhtml</url-pattern>
   </servlet-mapping>
-  <session-config>
-        <session-timeout>15</session-timeout>
-  </session-config>
+  
 </web-app>

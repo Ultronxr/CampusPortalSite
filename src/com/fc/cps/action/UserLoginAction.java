@@ -2,6 +2,7 @@ package com.fc.cps.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import com.fc.cps.dao.UserDao;
 import com.fc.cps.dao.jdbc.UserDaoImpl;
 import com.fc.cps.entity.UserEntity;
+import com.fc.cps.entity.UserLoginEntity;
 import com.fc.cps.global.VerifyCodeConstants;
 
 
@@ -52,14 +54,24 @@ public class UserLoginAction extends HttpServlet {
 		//printWriter.close();
 		
 		if(flag == 1) {
-			HttpSession session = request.getSession();
-			session.setAttribute("UserEntity", userEntity);
-			String sessionId = session.getId();
+			request.getSession().invalidate();
+			HttpSession httpSession = request.getSession();
+			//httpSession.invalidate();
+			
+			UserLoginEntity userLoginEntity = new UserLoginEntity();
+			userLoginEntity.setSchool_id(userEntity.getSchool_id());
+			userLoginEntity.setIp(request.getRemoteAddr());
+			userLoginEntity.setLogin_time(new Date());
+			userLoginEntity.setUserEntity(userEntity);
+			
+			httpSession.setAttribute("UserLoginEntity", userLoginEntity);
 //			Cookie cookie = new Cookie("JSESSIONID", sessionId);
 //			cookie.setPath(request.getContextPath());
 //			response.addCookie(cookie);
-			//request.getRequestDispatcher("index.jhtml").forward(request, response);
+			request.getRequestDispatcher("index.jhtml").forward(request, response);
 			//request.getRequestDispatcher("index.jhtml?page=1&keyword=").forward(request, response);
+			
+			
 		}
 			
 	}

@@ -34,12 +34,12 @@ public class IndexAction extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
+//		HttpSession session = request.getSession();
 		//session.removeAttribute("UserEntity");
-		UserEntity userEntity = (UserEntity)session.getAttribute("UserEntity");
-		if(userEntity != null) {
-			System.out.println("登录成功！");
-		}
+//		UserEntity userEntity = (UserEntity)session.getAttribute("UserEntity");
+//		if(userEntity != null) {
+//			System.out.println("登录成功！");
+//		}
 		
 		request.setCharacterEncoding("UTF-8");
 		String keyword_temp = request.getParameter("keyword");

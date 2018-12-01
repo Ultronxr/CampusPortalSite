@@ -2,9 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.fc.cps.entity.*"%>
 <%@ page import="java.util.List"%>
+<%@ page import="javax.servlet.http.HttpSession"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
- 
+
+<%
+	//获取session中的登录状态信息
+	HttpSession httpSession = request.getSession();
+	UserLoginEntity userLoginEntity = (UserLoginEntity)httpSession.getAttribute("UserLoginEntity");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,11 +36,19 @@
             <p>CPS校园门户网站</p>
         </div>
         <div class="drop-menu">
-		    <div class="hover-btn">[登录/注册]</div>
-		    <div class="drop-content">
-		        <a href="javascript:void(0);" onclick="user_login_dialog()">学生账户登录</a>
-		        <a href="javascript:void(0);" onclick="user_register_dialog()">学生账户注册</a>
-		    </div>
+        	<% if(userLoginEntity == null){	%>
+			    <div class="hover-btn">[登录/注册]</div>
+			    <div class="drop-content">
+			        <a href="javascript:void(0);" onclick="user_login_dialog()">学生账户登录</a>
+			        <a href="javascript:void(0);" onclick="user_register_dialog()">学生账户注册</a>
+			    </div>
+		    <% }else{ %>
+			    <div class="hover-btn"><%= userLoginEntity.getSchool_id() %></div>
+			    <div class="drop-content">
+			        <a href="javascript:void(0);" onclick="">查看个人信息</a>
+			        <a href="javascript:void(0);" onclick="userLogout.jhtml">&nbsp;&nbsp;&nbsp;&nbsp;注销</a>
+			    </div>
+		    <% } %>
 		</div>
         <!-- <ul id="nav">
             <li><a href="#" onclick="">func1</a></li>
