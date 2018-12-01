@@ -110,4 +110,3 @@ function user_register_dialog(){
 	});
 	$("#user_register_div").dialog("open");
 }
-

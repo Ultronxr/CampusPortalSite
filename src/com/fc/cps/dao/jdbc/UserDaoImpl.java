@@ -25,6 +25,7 @@ public class UserDaoImpl extends JDBCBase implements UserDao{
 			rs = ps.executeQuery();
 			while(rs.next()){
 				userEntity = new UserEntity();
+				userEntity.setSchool_id(rs.getString("school_id"));
 				userEntity.setPassword(rs.getString("password"));
 				userEntity.setPic_url(rs.getString("pic_url"));
 				userEntity.setName(rs.getString("name"));

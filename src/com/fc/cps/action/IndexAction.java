@@ -34,13 +34,6 @@ public class IndexAction extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		HttpSession session = request.getSession();
-		//session.removeAttribute("UserEntity");
-//		UserEntity userEntity = (UserEntity)session.getAttribute("UserEntity");
-//		if(userEntity != null) {
-//			System.out.println("登录成功！");
-//		}
-		
 		request.setCharacterEncoding("UTF-8");
 		String keyword_temp = request.getParameter("keyword");
 		//对应第一次访问servlet（初始化）的情况，没有keyword参数，则设置为空字符串（不是null）

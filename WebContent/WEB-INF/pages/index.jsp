@@ -43,10 +43,11 @@
 			        <a href="javascript:void(0);" onclick="user_register_dialog()">学生账户注册</a>
 			    </div>
 		    <% }else{ %>
-			    <div class="hover-btn"><%= userLoginEntity.getSchool_id() %></div>
+			    <div class="hover-btn"><%= userLoginEntity.getUserEntity().getSchool_id() %></div>
 			    <div class="drop-content">
 			        <a href="javascript:void(0);" onclick="">查看个人信息</a>
-			        <a href="javascript:void(0);" onclick="userLogout.jhtml">&nbsp;&nbsp;&nbsp;&nbsp;注销</a>
+			        <!-- <a href="javascript:void(0);" onclick="user_logout()">&nbsp;&nbsp;&nbsp;&nbsp;注销</a> -->
+			        <a href="userLogout.jhtml">&nbsp;&nbsp;&nbsp;&nbsp;注销</a>
 			    </div>
 		    <% } %>
 		</div>

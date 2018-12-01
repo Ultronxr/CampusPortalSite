@@ -50,29 +50,28 @@ public class UserLoginAction extends HttpServlet {
 		
 		printWriter.print(flag);
 		//printWriter.flush();
-		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag);
 		//printWriter.close();
 		
 		if(flag == 1) {
-			request.getSession().invalidate();
-			HttpSession httpSession = request.getSession();
-			//httpSession.invalidate();
-			
 			UserLoginEntity userLoginEntity = new UserLoginEntity();
 			userLoginEntity.setSchool_id(userEntity.getSchool_id());
 			userLoginEntity.setIp(request.getRemoteAddr());
 			userLoginEntity.setLogin_time(new Date());
 			userLoginEntity.setUserEntity(userEntity);
 			
+			request.getSession().invalidate();
+			HttpSession httpSession = request.getSession();
 			httpSession.setAttribute("UserLoginEntity", userLoginEntity);
-//			Cookie cookie = new Cookie("JSESSIONID", sessionId);
-//			cookie.setPath(request.getContextPath());
-//			response.addCookie(cookie);
-			request.getRequestDispatcher("index.jhtml").forward(request, response);
-			//request.getRequestDispatcher("index.jhtml?page=1&keyword=").forward(request, response);
+
+			//String sessionId = httpSession.getId();
+			//Cookie cookie = new Cookie("JSESSIONID", sessionId);
+			//cookie.setPath(request.getContextPath());
+			//response.addCookie(cookie);
 			
-			
+			request.getRequestDispatcher("index.jhtml").forward(request, response);			
 		}
+		
+		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag + " 登录学号："+userEntity.getSchool_id());
 			
 	}
 
