@@ -51,8 +51,8 @@ public class IndexAction extends HttpServlet {
 		List<IndexNewsEntity> indexNewsList = indexNewsDao.getIndexNewsListByKeyword(keyword);
 		Collections.reverse(indexNewsList); 
 		
-		//每页的新闻数量=4，默认页号=1， 默认总页数=1，总新闻数量            
-		int numPerPage = 6, pageNum = 1, totalPageNum = 1, totalNewsNum = indexNewsList.size();  
+		//每页的新闻数量=5，默认页号=1， 默认总页数=1，总新闻数量            
+		int numPerPage = 5, pageNum = 1, totalPageNum = 1, totalNewsNum = indexNewsList.size();  
 		
 		String page_str = request.getParameter("page");
 		if(page_str != null) pageNum = Integer.valueOf(page_str); 
