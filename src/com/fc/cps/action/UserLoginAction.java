@@ -68,7 +68,7 @@ public class UserLoginAction extends HttpServlet {
 			//cookie.setPath(request.getContextPath());
 			//response.addCookie(cookie);
 			
-			//request.getRequestDispatcher("index.jhtml").forward(request, response);			
+			//request.getRequestDispatcher("index.jhtml").forward(request, response);		
 			response.sendRedirect("index.jhtml");
 		}
 		

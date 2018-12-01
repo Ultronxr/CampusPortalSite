@@ -43,9 +43,9 @@
 			        <a href="javascript:void(0);" onclick="user_register_dialog()">学生账户注册</a>
 			    </div>
 		    <% }else{ %>
-			    <div class="hover-btn"><%= userLoginEntity.getUserEntity().getSchool_id() %></div>
+			    <div class="hover-btn">[<%= userLoginEntity.getUserEntity().getSchool_id() %>]</div>
 			    <div class="drop-content">
-			        <a href="javascript:void(0);" onclick="">查看个人信息</a>
+			        <a href="javascript:void(0);" onclick="">修改个人信息</a>
 			        <!-- <a href="javascript:void(0);" onclick="user_logout()">&nbsp;&nbsp;&nbsp;&nbsp;注销</a> -->
 			        <a href="userLogout.jhtml">&nbsp;&nbsp;&nbsp;&nbsp;注销</a>
 			    </div>
@@ -79,8 +79,8 @@
 	                    <p><%= userLoginEntity.getUserEntity().getClasss() %> 班</p>
 	                </div>
 	                <div class="basic_links">
-	                    <a href="#">详细资料</a><span>&nbsp;</span> 
-	                    <a href="#">安全设置</a><span>&nbsp;</span>
+	                    <a href="#">[详细资料]</a><span>&nbsp;</span> 
+	                    <a href="#">[安全设置]</a><span>&nbsp;</span>
 	                </div>
 	            <% } %> 
             </div>
@@ -151,6 +151,9 @@
     			<li><label>输入学号&nbsp;(11位的纯数字)</label><input type="text" id="user_register_username" name="user_register_username"></li>
     			<li><label>输入密码&nbsp;(3-18位的字母数字下划线组合)</label><input type="password" id="user_register_password" name="user_register_password"></li>
     			<li><label>重复密码</label><input type="password" id="user_register_password_repeat" name="user_register_password_repeat"></li>
+    			<li><label>验证码 &nbsp;&nbsp;</label>
+    				<img src="" onclick="refresh_verify_code()" width="100px" height="50px" id="user_register_code_img" name="user_register_code_img"><br/>
+    				<input type="text" id="user_register_code" name="user_register_code"></li>
     		</ul>
     	</form>
     </div>

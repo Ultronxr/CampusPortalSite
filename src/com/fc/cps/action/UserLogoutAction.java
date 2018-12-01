@@ -22,7 +22,6 @@ public class UserLogoutAction extends HttpServlet {
 		request.getSession().invalidate(); //清空session
 		response.sendRedirect("index.jhtml");
 		//request.getRequestDispatcher("index.jhtml").forward(request, response);
-		
 		System.out.println("用户注销成功：学号："+tempId);
 	}
 

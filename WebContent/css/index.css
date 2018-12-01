@@ -315,7 +315,6 @@
 }
 #user_login_div li{
 	list-style-type: none;
-	
 	width: 400px;
 	font-family: "微软雅黑";
 	font-size: 16px;
@@ -341,10 +340,6 @@
 	font-size: 16px;
 	margin-top: 15px;
 	margin-left: 30px;
-}
-#user_register_div li label{
-	display: block;
-	width: 400px;
 }
 #user_register_div li input{
 	display: block;
