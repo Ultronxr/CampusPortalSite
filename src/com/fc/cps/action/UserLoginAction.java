@@ -68,7 +68,8 @@ public class UserLoginAction extends HttpServlet {
 			//cookie.setPath(request.getContextPath());
 			//response.addCookie(cookie);
 			
-			request.getRequestDispatcher("index.jhtml").forward(request, response);			
+			//request.getRequestDispatcher("index.jhtml").forward(request, response);			
+			response.sendRedirect("index.jhtml");
 		}
 		
 		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag + " 登录学号："+userEntity.getSchool_id());

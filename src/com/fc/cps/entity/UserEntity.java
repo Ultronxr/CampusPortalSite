@@ -11,15 +11,15 @@ public class UserEntity {
 	private String sex;
 	private int age;
 	private String id_id;
-	private String grade;
-	private String classs;
-	private String politics_status;
+	private String institute; //学院
+	private String department; //系
+	private String classs; //班级
+	private String politics_status; //政治面貌
 	
 	private String phone_number;
 	private String qq_number;
 	private String email;
 	private String blog;
-	
 	
 	
 	public String getSchool_id() {
@@ -28,17 +28,17 @@ public class UserEntity {
 	public void setSchool_id(String school_id) {
 		this.school_id = school_id;
 	}
-	public String getPic_url() {
-		return pic_url;
-	}
-	public void setPic_url(String pic_url) {
-		this.pic_url = pic_url;
-	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getPic_url() {
+		return pic_url;
+	}
+	public void setPic_url(String pic_url) {
+		this.pic_url = pic_url;
 	}
 	public String getName() {
 		return name;
@@ -64,11 +64,17 @@ public class UserEntity {
 	public void setId_id(String id_id) {
 		this.id_id = id_id;
 	}
-	public String getGrade() {
-		return grade;
+	public String getInstitute() {
+		return institute;
 	}
-	public void setGrade(String grade) {
-		this.grade = grade;
+	public void setInstitute(String institute) {
+		this.institute = institute;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 	public String getClasss() {
 		return classs;
@@ -106,7 +112,5 @@ public class UserEntity {
 	public void setBlog(String blog) {
 		this.blog = blog;
 	}
-	
-	
 	
 }

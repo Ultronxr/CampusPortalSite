@@ -32,7 +32,8 @@ public class UserDaoImpl extends JDBCBase implements UserDao{
 				userEntity.setSex(rs.getString("sex"));
 				userEntity.setAge(rs.getInt("age"));
 				userEntity.setId_id(rs.getString("id_id"));
-				userEntity.setGrade(rs.getString("grade"));
+				userEntity.setInstitute(rs.getString("institute"));
+				userEntity.setDepartment(rs.getString("department"));
 				userEntity.setClasss(rs.getString("classs"));
 				userEntity.setPolitics_status(rs.getString("politics_status"));
 				userEntity.setPhone_number(rs.getString("phone_number"));
@@ -52,7 +53,7 @@ public class UserDaoImpl extends JDBCBase implements UserDao{
 	
 	@Override
 	public boolean insertUserEntityToMysql(UserEntity userEntity) {
-		String sql = "INSERT INTO users values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO users values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		
 		Connection con = JDBCUtil.getConnection();
 		PreparedStatement ps = null;
@@ -67,13 +68,14 @@ public class UserDaoImpl extends JDBCBase implements UserDao{
 			ps.setString(5, userEntity.getSex());
 			ps.setInt(6, userEntity.getAge());
 			ps.setString(7, userEntity.getId_id());
-			ps.setString(8, userEntity.getGrade());
-			ps.setString(9, userEntity.getClasss());
-			ps.setString(10, userEntity.getPolitics_status());
-			ps.setString(11, userEntity.getPhone_number());
-			ps.setString(12, userEntity.getQq_number());
-			ps.setString(13, userEntity.getEmail());
-			ps.setString(14, userEntity.getBlog());
+			ps.setString(8, userEntity.getInstitute());
+			ps.setString(9, userEntity.getDepartment());
+			ps.setString(10, userEntity.getClasss());
+			ps.setString(11, userEntity.getPolitics_status());
+			ps.setString(12, userEntity.getPhone_number());
+			ps.setString(13, userEntity.getQq_number());
+			ps.setString(14, userEntity.getEmail());
+			ps.setString(15, userEntity.getBlog());
 			flag = ps.executeUpdate(); //返回执行语句后受影响的行数
 		}catch(SQLException e) {
 			e.printStackTrace();

@@ -65,16 +65,24 @@
         <div id="container_left">
         	<div style="height: 20px;"></div>
             <div id="user_infos">
-                <img>
-                <div class="basic_infos">
-                    <p>王小明</p>
-                    <p>电子与信息工程 学院</p>
-                    <p>计算机与科学技术 系</p>
-                </div>
-                <div class="basic_links">
-                    <a href="#">详细资料</a><span>&nbsp;</span> 
-                    <a href="#">安全设置</a><span>&nbsp;</span>
-                </div> 
+	            <% if(userLoginEntity == null){ %>
+	                <img>
+	                <div class="basic_infos">
+	                    <strong><p>&nbsp;&nbsp;&nbsp;&nbsp;请登录</p></strong>
+	                </div>
+	            <% } else{ %>
+	            	<img src="img_cache/user_pic/<%= userLoginEntity.getUserEntity().getPic_url() %>">
+	                <div class="basic_infos">
+	                    <strong><p><%= userLoginEntity.getUserEntity().getName() %></p></strong>
+	                    <p><%= userLoginEntity.getUserEntity().getInstitute() %> 学院</p>
+	                    <p><%= userLoginEntity.getUserEntity().getDepartment() %> 系</p>
+	                    <p><%= userLoginEntity.getUserEntity().getClasss() %> 班</p>
+	                </div>
+	                <div class="basic_links">
+	                    <a href="#">详细资料</a><span>&nbsp;</span> 
+	                    <a href="#">安全设置</a><span>&nbsp;</span>
+	                </div>
+	            <% } %> 
             </div>
             <div id="weather">
                 <p>宁波天气预报</p>

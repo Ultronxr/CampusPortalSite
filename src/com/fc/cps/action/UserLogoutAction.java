@@ -20,7 +20,8 @@ public class UserLogoutAction extends HttpServlet {
 		UserLoginEntity userLoginEntity = (UserLoginEntity)httpSession.getAttribute("UserLoginEntity");
 		String tempId = userLoginEntity.getUserEntity().getSchool_id();
 		request.getSession().invalidate(); //清空session
-		request.getRequestDispatcher("index.jhtml").forward(request, response);
+		response.sendRedirect("index.jhtml");
+		//request.getRequestDispatcher("index.jhtml").forward(request, response);
 		
 		System.out.println("用户注销成功：学号："+tempId);
 	}
