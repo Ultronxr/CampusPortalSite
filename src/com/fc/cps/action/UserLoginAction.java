@@ -47,19 +47,20 @@ public class UserLoginAction extends HttpServlet {
 		}
 		
 		printWriter.print(flag);
-		printWriter.flush();
+		//printWriter.flush();
 		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag);
-		printWriter.close();
+		//printWriter.close();
 		
 		if(flag == 1) {
 			HttpSession session = request.getSession();
-			session.setAttribute("UserEntity", "userEntity");
+			session.setAttribute("UserEntity", userEntity);
 			String sessionId = session.getId();
-			Cookie cookie = new Cookie("JSESSIONID", sessionId);
-			cookie.setPath(request.getContextPath());
-			response.addCookie(cookie);
+//			Cookie cookie = new Cookie("JSESSIONID", sessionId);
+//			cookie.setPath(request.getContextPath());
+//			response.addCookie(cookie);
+			//request.getRequestDispatcher("index.jhtml").forward(request, response);
+			//request.getRequestDispatcher("index.jhtml?page=1&keyword=").forward(request, response);
 		}
-			request.getRequestDispatcher("index.jhtml").forward(request, response);
 			
 	}
 

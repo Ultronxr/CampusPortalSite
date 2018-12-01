@@ -10,10 +10,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fc.cps.dao.IndexNewsDao;
 import com.fc.cps.dao.jdbc.IndexNewsDaoImpl;
 import com.fc.cps.entity.IndexNewsEntity;
+import com.fc.cps.entity.UserEntity;
 
 /**
  * 首页新闻的Servlet，调用时分为以下几种情况：
@@ -31,6 +33,13 @@ public class IndexAction extends HttpServlet {
 	private IndexNewsDao indexNewsDao = new IndexNewsDaoImpl();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		//session.removeAttribute("UserEntity");
+		UserEntity userEntity = (UserEntity)session.getAttribute("UserEntity");
+		if(userEntity != null) {
+			System.out.println("登录成功！");
+		}
 		
 		request.setCharacterEncoding("UTF-8");
 		String keyword_temp = request.getParameter("keyword");
