@@ -50,6 +50,7 @@ function user_login_dialog() {
 		    					$("#user_login_infos").text("学号或密码错误！");
 		    				else if(msg.result=="1") {
 		    					$("#user_login_infos").text("登录成功。");
+		    					//location.reload();
 		    					window.location.href="/CampusPortalSite/index.jhtml";
 		    				}
 		    			}
@@ -112,11 +113,14 @@ function user_register_dialog(){
 		    			data:ajax_data,
 		    			dataType:'json',
 		    			success:function(msg){
-		    				if(msg==-1)     $("#user_register_infos").text("验证码错误！");
-		    				else if(msg==0) $("#user_register_infos").text("该学号已存在，请输入新的学号！");
-		    				else if(msg==1){
+		    				if(msg.result=="-1")
+		    					$("#user_register_infos").text("验证码错误！");
+		    				else if(msg.result=="0") 
+		    					$("#user_register_infos").text("该学号已存在，请输入新的学号！");
+		    				else if(msg.result=="1"){
 		    					alert("注册成功！");
-		    					location.reload();
+		    					//location.reload();
+		    					window.location.href="/CampusPortalSite/index.jhtml";
 		    				}
 		    			}
 		    		});
