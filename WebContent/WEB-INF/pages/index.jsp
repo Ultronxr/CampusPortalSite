@@ -6,12 +6,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<%
-	//获取session中的登录状态信息
-	HttpSession httpSession = request.getSession();
-	UserLoginEntity userLoginEntity = (UserLoginEntity)httpSession.getAttribute("UserLoginEntity");
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,20 +30,21 @@
             <p>CPS校园门户网站</p>
         </div>
         <div class="drop-menu">
-        	<% if(userLoginEntity == null){	%>
+        	<c:if test="${UserLoginEntity==null}">
 			    <div class="hover-btn">[登录/注册]</div>
 			    <div class="drop-content">
 			        <a href="javascript:void(0);" onclick="user_login_dialog()">学生账户登录</a>
 			        <a href="javascript:void(0);" onclick="user_register_dialog()">学生账户注册</a>
 			    </div>
-		    <% }else{ %>
-			    <div class="hover-btn">[<%= userLoginEntity.getUserEntity().getSchool_id() %>]</div>
+			</c:if>
+			<c:if test="${UserLoginEntity!=null}">
+			    <div class="hover-btn">[${UserLoginEntity.userEntity.school_id}]</div>
 			    <div class="drop-content">
 			        <a href="javascript:void(0);" onclick="">修改个人信息</a>
 			        <!-- <a href="javascript:void(0);" onclick="user_logout()">&nbsp;&nbsp;&nbsp;&nbsp;注销</a> -->
 			        <a href="userLogout.jhtml">&nbsp;&nbsp;&nbsp;&nbsp;注销</a>
 			    </div>
-		    <% } %>
+		    </c:if>
 		</div>
         <!-- <ul id="nav">
             <li><a href="#" onclick="">func1</a></li>
@@ -65,24 +60,25 @@
         <div id="container_left">
         	<div style="height: 20px;"></div>
             <div id="user_infos">
-	            <% if(userLoginEntity == null){ %>
+	            <c:if test="${UserLoginEntity==null}">
 	                <img>
 	                <div class="basic_infos">
 	                    <strong><p>&nbsp;&nbsp;&nbsp;&nbsp;请登录</p></strong>
 	                </div>
-	            <% } else{ %>
-	            	<img src="img_cache/user_pic/<%= userLoginEntity.getUserEntity().getPic_url() %>">
+	            </c:if>
+	            <c:if test="${UserLoginEntity!=null}">
+	            	<img src="img_cache/user_pic/${UserLoginEntity.userEntity.pic_url}">
 	                <div class="basic_infos">
-	                    <strong><p><%= userLoginEntity.getUserEntity().getName() %></p></strong>
-	                    <p><%= userLoginEntity.getUserEntity().getInstitute() %> 学院</p>
-	                    <p><%= userLoginEntity.getUserEntity().getDepartment() %> 系</p>
-	                    <p><%= userLoginEntity.getUserEntity().getClasss() %> 班</p>
+	                    <strong><p>${UserLoginEntity.userEntity.name}</p></strong>
+	                    <p>${UserLoginEntity.userEntity.institute} 学院</p>
+	                    <p>${UserLoginEntity.userEntity.department} 系</p>
+	                    <p>${UserLoginEntity.userEntity.classs} 班</p>
 	                </div>
 	                <div class="basic_links">
 	                    <a href="#">[详细资料]</a><span>&nbsp;</span> 
 	                    <a href="#">[安全设置]</a><span>&nbsp;</span>
 	                </div>
-	            <% } %> 
+	            </c:if>
             </div>
             <div id="weather">
                 <p>宁波天气预报</p>

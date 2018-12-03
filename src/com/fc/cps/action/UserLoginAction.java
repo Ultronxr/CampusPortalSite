@@ -40,8 +40,9 @@ public class UserLoginAction extends HttpServlet {
 		String code = request.getParameter("code");
 		
 		String real_code = VerifyCodeConstants.getCodeNumber();
-		if(real_code.toLowerCase().equals(code.toLowerCase()))
+		if(real_code.toLowerCase().equals(code.toLowerCase())) {
 			flag = 0; //代表验证码验证通过 且 账户密码验证不通过
+		}
 		
 		UserEntity userEntity = userDao.getUserEntityBySchoolId(username);
 		if(flag==0 && userEntity != null && userEntity.getPassword().equals(password)) {
@@ -49,8 +50,6 @@ public class UserLoginAction extends HttpServlet {
 		}
 		
 		printWriter.print(flag);
-		//printWriter.flush();
-		//printWriter.close();
 		
 		if(flag == 1) {
 			UserLoginEntity userLoginEntity = new UserLoginEntity();
@@ -62,17 +61,11 @@ public class UserLoginAction extends HttpServlet {
 			request.getSession().invalidate();
 			HttpSession httpSession = request.getSession();
 			httpSession.setAttribute("UserLoginEntity", userLoginEntity);
-
-			//String sessionId = httpSession.getId();
-			//Cookie cookie = new Cookie("JSESSIONID", sessionId);
-			//cookie.setPath(request.getContextPath());
-			//response.addCookie(cookie);
-			
-			//request.getRequestDispatcher("index.jhtml").forward(request, response);		
 			response.sendRedirect("index.jhtml");
 		}
 		
 		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag + " 登录学号："+userEntity.getSchool_id());
+		
 			
 	}
 
