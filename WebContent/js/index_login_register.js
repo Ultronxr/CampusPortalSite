@@ -43,9 +43,15 @@ function user_login_dialog() {
 		    			data:ajax_data,
 		    			dataType:'json',
 		    			success:function(msg){
-		    				if(msg==-1)     $("#user_login_infos").text("验证码错误！");
-		    				else if(msg==0) $("#user_login_infos").text("学号或密码错误！");
-		    				opener.location.reload()
+		    				//alert(msg.result);
+		    				if(msg.result=="-1")	
+		    					$("#user_login_infos").text("验证码错误！");
+		    				else if(msg.result=="0") 
+		    					$("#user_login_infos").text("学号或密码错误！");
+		    				else if(msg.result=="1") {
+		    					$("#user_login_infos").text("登录成功。");
+		    					window.location.href="/CampusPortalSite/index.jhtml";
+		    				}
 		    			}
 		    		});
 		    	}

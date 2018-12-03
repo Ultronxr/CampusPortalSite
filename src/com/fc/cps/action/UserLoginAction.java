@@ -49,7 +49,7 @@ public class UserLoginAction extends HttpServlet {
 			flag = 1; //代表验证码验证通过 且 账户密码验证通过
 		}
 		
-		printWriter.print(flag);
+		printWriter.print("{\"result\":\""+flag+"\"}");
 		
 		if(flag == 1) {
 			UserLoginEntity userLoginEntity = new UserLoginEntity();
@@ -61,12 +61,14 @@ public class UserLoginAction extends HttpServlet {
 			request.getSession().invalidate();
 			HttpSession httpSession = request.getSession();
 			httpSession.setAttribute("UserLoginEntity", userLoginEntity);
-			response.sendRedirect("index.jhtml");
+			//response.sendRedirect("index.jhtml"); //因为使用了printWriter，不直接重定向，转而用js负责接收flag，根据flag进行处理
 		}
 		
-		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag + " 登录学号："+userEntity.getSchool_id());
+		printWriter.flush();
+		printWriter.close();
 		
-			
+		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag + " 登录学号："+username);
+		
 	}
 
 }
