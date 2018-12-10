@@ -55,5 +55,20 @@
     <servlet-name>verifyCodeAction</servlet-name>
     <url-pattern>/verifyCode.jhtml</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>userInfosAction</servlet-name>
+    <servlet-class>com.fc.cps.action.UserInfosAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userInfosAction</servlet-name>
+    <url-pattern>/userInfos.jhtml</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>iCCardAction</servlet-name>
+    <servlet-class>com.fc.cps.action.ICCardAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>iCCardAction</servlet-name>
+    <url-pattern>/iCCard.jhtml</url-pattern>
+  </servlet-mapping>
 </web-app>
