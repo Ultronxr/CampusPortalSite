@@ -102,7 +102,7 @@ function infos_submit() {
 	var reg1 = /^[0-9]{1,3}$/, //年龄
 		reg2 = /^[0-9]{3}$/; //班级
 	
-	if(!reg1.test(age)){
+	if(!reg1.test(age) || (age<10||age>80)){
 		alert("请输入正确的年龄信息！");
 		return;
 	}
@@ -143,3 +143,11 @@ function infos_cancel() {
 	$("#email_input").val(array[11]);
 	$("#blog_input").val(array[12]);
 }
+
+
+
+
+
+
+
+
