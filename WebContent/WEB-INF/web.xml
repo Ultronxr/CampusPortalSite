@@ -79,4 +79,12 @@
     <servlet-name>userInfosPicAction</servlet-name>
     <url-pattern>/userInfosPic.jhtml</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>userInfosUpdateAction</servlet-name>
+    <servlet-class>com.fc.cps.action.UserInfosUpdateAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userInfosUpdateAction</servlet-name>
+    <url-pattern>/userInfosUpdate.jhtml</url-pattern>
+  </servlet-mapping>
 </web-app>

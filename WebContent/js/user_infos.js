@@ -62,3 +62,84 @@ function commit_user_pic() {
 }
 
 
+var array = new Array(); //记录修改前的个人信息
+
+function infos_change() {
+	array.splice(0,array.length);
+	array.push($("#name_input").val());
+	array.push($("#sex_input").val());
+	array.push($("#age_input").val());
+	array.push($("#id_id_input").val());
+	array.push($("#politics_status_input").val());
+	array.push($("#school_id_input").val());
+	array.push($("#institute_input").val());
+	array.push($("#department_input").val());
+	array.push($("#classs_input").val());
+	array.push($("#phone_number_input").val());
+	array.push($("#qq_number_input").val());
+	array.push($("#email_input").val());
+	array.push($("#blog_input").val());
+	
+	$("#infos_change_button").parent().hide();
+	$("#infos_cancel_button").parent().show();
+	$("#user_infos_form input").removeAttr("disabled");
+	$("#id_id_input").attr("disabled","disabled");
+	$("#school_id_input").attr("disabled","disabled");
+	
+}
+function infos_submit() {
+	var name=$("#name_input").val(), sex=$("#sex_input").val(), age=$("#age_input").val(), politics_status=$("#politics_status_input").val(),
+		institute=$("#institute_input").val(), department=$("#department_input").val(), classs=$("#classs_input").val(),
+		phone_number=$("#phone_number_input").val(), qq_number=$("#qq_number_input").val(), email=$("#email_input").val(),
+		blog=$("#blog_input").val();
+
+	if(name==null || sex==null || age==null || politics_status==null || institute==null || department==null || classs==null
+			|| name=="" || sex=="" || age=="" || politics_status=="" || institute=="" || department=="" || classs==""){
+		alert("请填写完所有必填信息再保存！")
+		return;
+	}
+	
+	var reg1 = /^[0-9]{1,3}$/, //年龄
+		reg2 = /^[0-9]{3}$/; //班级
+	
+	if(!reg1.test(age)){
+		alert("请输入正确的年龄信息！");
+		return;
+	}
+	if(!reg1.test(classs)){
+		alert("请输入正确的班级信息！");
+		return;
+	}
+	
+	$.ajax({
+		type:"POST",
+		url:"/CampusPortalSite/userInfosUpdate.jhtml",
+		data:{name:name,sex:sex,age:age,politics_status:politics_status,institute:institute,department:department,classs:classs,
+			phone_number:phone_number,qq_number:qq_number,email:email,blog:blog},
+		dataType:'json',
+		success:function(msg){
+			if(msg.result == "1") alert("信息修改保存成功！");
+			else alert("无法保存信息修改！");
+			location.reload();
+		}
+	});
+}
+function infos_cancel() {
+	$("#infos_cancel_button").parent().hide();
+	$("#infos_change_button").parent().show();
+	$("#user_infos_form input").attr("disabled","disabled");
+	
+	$("#name_input").val(array[0]);
+	$("#sex_input").val(array[1]);
+	$("#age_input").val(array[2]);
+	$("#id_id_input").val(array[3]);
+	$("#politics_status_input").val(array[4]);
+	$("#school_id_input").val(array[5]);
+	$("#institute_input").val(array[6]);
+	$("#department_input").val(array[7]);
+	$("#classs_input").val(array[8]);
+	$("#phone_number_input").val(array[9]);
+	$("#qq_number_input").val(array[10]);
+	$("#email_input").val(array[11]);
+	$("#blog_input").val(array[12]);
+}

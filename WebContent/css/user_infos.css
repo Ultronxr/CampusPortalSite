@@ -126,7 +126,7 @@
 }
 #container_left{
 	float:left;
-	min-height: 500px;
+	min-height: 180px;
 	position: relative;
 	margin-left:150px;
 	background: #f0f0f0;
@@ -201,7 +201,7 @@
 	left: 300px;
 	top: 30px;
 }
-#user_pic_change_div_right .commit_button{
+#user_pic_change_div_right .pic_commit_button{
 	width: 200px;
 	height: 30px;
 	float: right;
@@ -210,10 +210,64 @@
 	bottom: 20px;
 }
 
-#user_info_div_right{
+#user_infos_change_div_right{
 	/* display:none; */
 	width: 1050px;
 	float:left;
-	height: auto;
+	min-height: 500px;
+	background: #f4f4f4;
+}
+#user_infos_form{
+	/* float: left;
+	position: relative; */
+	margin-left: 150px;
+	margin-top: 80px;
+}
+#infos_change_button{
+	float: right;
+	margin-right: 150px;
+	margin-top: -30px;
+	height: 30px;
+	width: 80px;
+}
+#infos_submit_button{
+	float: right;
+	margin-right: 250px;
+	margin-top: -30px;
+	height: 30px;
+	width: 80px;
+}
+#infos_cancel_button{
+	float: right;
+	margin-right: 150px;
+	margin-top: -30px;
+	height: 30px;
+	width: 80px;
+}
+
+#user_infos_form p{
+	font-family: 宋体;
+	margin-left: -50px;
+	margin-top: 40px;
+}
+#user_infos_form div{
+	margin-top: 20px;
+}
+#user_infos_form input{
+	float:right;
+	margin-right: 200px;
+	height: 30px;
+	width: 400px;
+	font-family: consolas;
+	font-size: 18px;
+}
+
+
+#user_pwd_change_div_right{
+	/* display:none; */
+	width: 1050px;
+	float:left;
+	min-height: 500px;
+	background: #f4f4f4;
 }
 

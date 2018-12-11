@@ -20,7 +20,7 @@ public class UserEntity {
 	private String qq_number;
 	private String email;
 	private String blog;
-	
+
 	
 	public String getSchool_id() {
 		return school_id;

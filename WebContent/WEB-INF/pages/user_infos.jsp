@@ -65,14 +65,46 @@
 			    	<img id="img_preview" class="img_class" width="200px" height="200px" border="1">
 			    	<form> <input id="img_select" type="file" name="pic" accept="image/*" /></form>
 		    	</div>
-		    	<button type="button" id="commit_button" class="commit_button" onclick="commit_user_pic()">提交</button>
+		    	<button type="button" id="pic_commit_button" class="pic_commit_button" onclick="commit_user_pic()">提交</button>
 		    </div>
 		    
 		    <div id="user_infos_change_div_right" style="display: none;">
-		    
-		    
-		    
+				<form id="user_infos_form">
+					<div>
+						<button type="button" id="infos_change_button" onclick="infos_change()">修改</button>
+					</div>
+					<div style="display: none;">
+						<button type="button" id="infos_submit_button" onclick="infos_submit()">保存</button>
+						<button type="button" id="infos_cancel_button" onclick="infos_cancel()">取消</button>
+					</div>
+					
+					<p>基础信息(带星号的信息为必填)</p>
+					<div><label>姓名*</label><input type="text" id="name_input" disabled="disabled" value="${UserLoginEntity.userEntity.name}"></div>
+					<div><label>性别*</label><input type="text" id="sex_input" disabled="disabled" value="${UserLoginEntity.userEntity.sex}"></div>
+					<div><label>年龄*</label><input type="text" id="age_input" disabled="disabled" value="${UserLoginEntity.userEntity.age}"></div>
+					<div><label>身份证号*</label><input type="text" id="id_id_input" disabled="disabled" value="${UserLoginEntity.userEntity.id_id}"></div>
+					<div><label>政治面貌*</label><input type="text" id="politics_status_input" disabled="disabled" value="${UserLoginEntity.userEntity.politics_status}"></div>
+					<div>&nbsp;</div>
+					
+					<p>学籍信息(带星号的信息为必填)</p>
+					<div><label>学号*</label><input type="text" id="school_id_input" disabled="disabled" value="${UserLoginEntity.userEntity.school_id}"></div>
+					<div><label>学院*</label><input type="text" id="institute_input" disabled="disabled" value="${UserLoginEntity.userEntity.institute}"></div>
+					<div><label>系*</label><input type="text" id="department_input" disabled="disabled" value="${UserLoginEntity.userEntity.department}"></div>
+					<div><label>班级*</label><input type="text" id="classs_input" disabled="disabled" value="${UserLoginEntity.userEntity.classs}"></div>
+					<div>&nbsp;</div>
+					
+					<p>扩展信息(带星号的信息为必填)</p>
+					<div><label>手机号码</label><input type="text" id="phone_number_input" disabled="disabled" value="${UserLoginEntity.userEntity.phone_number}"></div>
+					<div><label>QQ号</label><input type="text" id="qq_number_input" disabled="disabled" value="${UserLoginEntity.userEntity.qq_number}"></div>
+					<div><label>email电子邮箱</label><input type="text" id="email_input" disabled="disabled" value="${UserLoginEntity.userEntity.email}"></div>
+					<div><label>blog博客</label><input type="text" id="blog_input" disabled="disabled" value="${UserLoginEntity.userEntity.blog}"></div>
+					<div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+					
+				</form>
 		    </div>
+		    
+		    
+		    
 		    
 		    <div id="user_pwd_change_div_right" style="display: none;">
 		    

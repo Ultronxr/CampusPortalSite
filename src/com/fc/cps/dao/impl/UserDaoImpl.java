@@ -92,6 +92,41 @@ public class UserDaoImpl extends JDBCBase implements UserDao{
 	}
 	
 	@Override
+	public boolean replaceUserEntityToMysql(UserEntity userEntity) {
+		String sql = "REPLACE INTO users values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		
+		Connection con = JDBCUtil.getConnection();
+		PreparedStatement ps = null;
+		int flag = -1;
+		
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userEntity.getSchool_id());
+			ps.setString(2, userEntity.getPassword());
+			ps.setString(3, userEntity.getPic_url());
+			ps.setString(4, userEntity.getName());
+			ps.setString(5, userEntity.getSex());
+			ps.setInt(6, userEntity.getAge());
+			ps.setString(7, userEntity.getId_id());
+			ps.setString(8, userEntity.getInstitute());
+			ps.setString(9, userEntity.getDepartment());
+			ps.setString(10, userEntity.getClasss());
+			ps.setString(11, userEntity.getPolitics_status());
+			ps.setString(12, userEntity.getPhone_number());
+			ps.setString(13, userEntity.getQq_number());
+			ps.setString(14, userEntity.getEmail());
+			ps.setString(15, userEntity.getBlog());
+			flag = ps.executeUpdate(); //返回执行语句后受影响的行数
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.closeConnection(null, ps, con);
+		}
+		if(flag == 1) return true;
+		else return false;
+	}
+	
+	@Override
 	public boolean updateUserEntityInfos(String param, String paramCon, String condition, String conditionCon) {
 		String sql = "UPDATE users SET "+param+"=? WHERE "+condition+"=?";
 		

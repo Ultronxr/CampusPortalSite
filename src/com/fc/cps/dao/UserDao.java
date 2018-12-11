@@ -18,6 +18,12 @@ public interface UserDao {
 	boolean insertUserEntityToMysql(UserEntity userEntity);
 	
 	/**
+	 * 把更新后的用户实体类覆盖数据库
+	 * 
+	 */
+	boolean replaceUserEntityToMysql(UserEntity userEntity);
+	
+	/**
 	 * 更新用户的信息
 	 * 目的：把param列改成paramCon
 	 * 条件：当condition为conditionCon时
