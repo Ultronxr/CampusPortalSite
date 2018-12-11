@@ -68,6 +68,9 @@
 		    	<button type="button" id="pic_commit_button" class="pic_commit_button" onclick="commit_user_pic()">提交</button>
 		    </div>
 		    
+		    
+		    
+		    
 		    <div id="user_infos_change_div_right" style="display: none;">
 				<form id="user_infos_form">
 					<div>
