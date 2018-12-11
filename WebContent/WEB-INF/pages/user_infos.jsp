@@ -14,7 +14,10 @@
 	<script src="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-ui.js" charset="utf-8"></script>
 	<link rel="shortcut icon" href="img_cache/favicon.ico">
 	
-	<title>CPS校园门户网站-用户个人信息页面</title>
+	<link rel="stylesheet" href="/CampusPortalSite/css/user_infos.css" />
+	<script src="/CampusPortalSite/js/user_infos.js" charset="utf-8"></script>
+	
+	<title>CPS校园门户网站-个人信息页面</title>
 </head>
 <body>
 	<div id="header">
@@ -22,7 +25,7 @@
             <a href="/CampusPortalSite/index.jhtml"><img src="img_cache/icon_icon.png" width="200" height="60"></a>
         </div>
         <div id="title">
-            <p>CPS校园门户网站</p>
+            <p>个人资料管理</p>
         </div>
         <div class="drop-menu">
         	<c:if test="${UserLoginEntity==null}">
@@ -35,18 +38,48 @@
 			<c:if test="${UserLoginEntity!=null}">
 			    <div class="hover-btn">[${UserLoginEntity.userEntity.school_id}]</div>
 			    <div class="drop-content">
-			        <a href="javascript:void(0);" onclick="">详细资料</a>
-			        <a href="javascript:void(0);" onclick="">IC卡查询</a>
-			        <!-- <a href="javascript:void(0);" onclick="user_logout()">&nbsp;&nbsp;&nbsp;&nbsp;注销</a> -->
+			        <a href="index.jhtml" onclick="">&nbsp;&nbsp;&nbsp;&nbsp;首页</a>
+			        <a href="icCard.jhtml" onclick="">IC卡查询</a>
 			        <a href="userLogout.jhtml">&nbsp;&nbsp;&nbsp;&nbsp;注销</a>
 			    </div>
 		    </c:if>
 		</div>
-        <!-- <ul id="nav">
-            <li><a href="#" onclick="">func1</a></li>
-            <li><a href="#" onclick="">func2</a></li>
-        </ul> -->
+    </div>
+    <div id="container">
+    	<div id="container_left">
+    		<ul id="container_left_ul">
+    			<li class="select_up"><a href="#">更换头像</a></li>
+    			<li class=""><a href="#">个人资料</a></li>
+    			<li class=""><a href="#">密码设置</a></li>
+    		</ul>
+    	</div>
+    	<div id="container_right">
+    	
+    		<div id="user_pic_change_div_right">
+    			<div class="before">
+		   			<label class="label_before">当前头像</label>
+			    	<img class="img_before" src="#" width="200px" height="200px">
+    			</div>
+		    	<div class="after">
+			    	<label class="label_after">选择头像</label>
+			    	<img class="img_after" width="200px" height="200px">
+		    	</div>
+		    	<button>上传头像</button>
+		    </div>
+		    
+    	</div>
+    </div>
+    
+    
+    
+    
+    
+    <div id="user_info_div_right">
+    
     </div>
 
+	<div id="user_pwd_change_div_right">
+		
+	</div>
 </body>
 </html>

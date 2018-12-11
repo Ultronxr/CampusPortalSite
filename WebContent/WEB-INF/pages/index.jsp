@@ -40,23 +40,14 @@
 			<c:if test="${UserLoginEntity!=null}">
 			    <div class="hover-btn">[${UserLoginEntity.userEntity.school_id}]</div>
 			    <div class="drop-content">
-			        <a href="userInfos.jhtml" onclick="">详细资料</a>
-			        <a href="javascript:void(0);" onclick="">IC卡查询</a>
+			        <a href="userInfos.jhtml" onclick="">&nbsp;&nbsp;个人资料</a>
+			        <a href="icCard.jhtml" onclick="">&nbsp;&nbsp;IC卡查询</a>
 			        <!-- <a href="javascript:void(0);" onclick="user_logout()">&nbsp;&nbsp;&nbsp;&nbsp;注销</a> -->
 			        <a href="userLogout.jhtml">&nbsp;&nbsp;&nbsp;&nbsp;注销</a>
 			    </div>
 		    </c:if>
 		</div>
-        <!-- <ul id="nav">
-            <li><a href="#" onclick="">func1</a></li>
-            <li><a href="#" onclick="">func2</a></li>
-        </ul> -->
     </div>
-    <!-- <div id="header_img_div">
-    	<div id="header_img">
-    		<img src="img_cache/index_header_img.jpg" width="1200px" height="auto">
-    	</div>
-    </div> -->
     <div id="container">
         <div id="container_left">
         	<div style="height: 20px;"></div>
@@ -76,8 +67,8 @@
 	                    <p>${UserLoginEntity.userEntity.classs} 班</p>
 	                </div>
 	                <div class="basic_links">
-	                    <a href="user_info.jsp">[详细资料]</a><span>&nbsp;</span> 
-	                    <a href="#">[IC卡查询]</a><span>&nbsp;</span>
+	                    <a href="userInfos.jhtml">[个人资料]</a><span>&nbsp;</span> 
+	                    <a href="icCard.jhtml">[IC卡查询]</a><span>&nbsp;</span>
 	                </div>
 	            </c:if>
             </div>

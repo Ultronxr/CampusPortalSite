@@ -64,11 +64,11 @@
     <url-pattern>/userInfos.jhtml</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>iCCardAction</servlet-name>
+    <servlet-name>icCardAction</servlet-name>
     <servlet-class>com.fc.cps.action.ICCardAction</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>iCCardAction</servlet-name>
-    <url-pattern>/iCCard.jhtml</url-pattern>
+    <servlet-name>icCardAction</servlet-name>
+    <url-pattern>/icCard.jhtml</url-pattern>
   </servlet-mapping>
 </web-app>
