@@ -1,4 +1,4 @@
-package com.fc.cps.dao.jdbc;
+package com.fc.cps.dao.impl;
 
 import java.io.IOException;
 import java.io.InputStream;

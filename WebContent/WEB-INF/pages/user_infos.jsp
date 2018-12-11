@@ -57,14 +57,15 @@
     	
     		<div id="user_pic_change_div_right">
     			<div class="before">
-		   			<label class="label_before">当前头像</label>
-			    	<img class="img_before" src="#" width="200px" height="200px">
+		   			<label class="label_class">当前头像</label>
+			    	<img class="img_class" src="img_cache/user_pic/${UserLoginEntity.userEntity.pic_url}" width="200px" height="200px" border="1">
     			</div>
 		    	<div class="after">
-			    	<label class="label_after">选择头像</label>
-			    	<img class="img_after" width="200px" height="200px">
+			    	<label class="label_class">选择头像</label>
+			    	<img id="img_preview" class="img_class" width="200px" height="200px" border="1">
+			    	<form> <input id="img_select" type="file" name="pic" accept="image/*" /></form>
 		    	</div>
-		    	<button>上传头像</button>
+		    	<button type="button" id="commit_button" class="commit_button" onclick="commit_user_pic()">提交</button>
 		    </div>
 		    
     	</div>

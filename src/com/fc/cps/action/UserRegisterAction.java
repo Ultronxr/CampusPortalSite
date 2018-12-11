@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fc.cps.dao.UserDao;
-import com.fc.cps.dao.jdbc.UserDaoImpl;
+import com.fc.cps.dao.impl.UserDaoImpl;
 import com.fc.cps.entity.UserEntity;
 import com.fc.cps.global.VerifyCodeConstants;
 

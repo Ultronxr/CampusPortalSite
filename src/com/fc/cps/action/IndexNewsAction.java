@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fc.cps.dao.IndexNewsDao;
-import com.fc.cps.dao.jdbc.IndexNewsDaoImpl;
+import com.fc.cps.dao.impl.IndexNewsDaoImpl;
 import com.fc.cps.entity.IndexNewsEntity;
 
 

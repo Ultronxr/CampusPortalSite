@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.fc.cps.dao.IndexNewsDao;
-import com.fc.cps.dao.jdbc.IndexNewsDaoImpl;
+import com.fc.cps.dao.impl.IndexNewsDaoImpl;
 import com.fc.cps.entity.IndexNewsEntity;
 import com.fc.cps.entity.UserEntity;
 

@@ -162,24 +162,52 @@
 	/* display:none; */
 	width: 1050px;
 	float:left;
-	height: auto;
+	min-height: 500px;
+	background: #f4f4f4;
 }
 #user_pic_change_div_right .before{
 	float: left;
-	margin: 30px 50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 50px;
+	margin-right: 30px;
+	width: 	400px;
+	height: 400px;
 }
-
 #user_pic_change_div_right .after{
 	float: left;
-	margin: 30px 50px;
+	margin: 30px 0;
+	width: 	400px;
+	height: 400px;
 }
-
-#user_pic_change_div_right button{
-	float: right;
-	margin: 30px 50px;
-	width: 100px;
-	height: 30px;
+#user_pic_change_div_right .label_class{
+	display: block;
+	float: left;
 	position: relative;
+	top: 20px;
+	left: 100px;
+}
+#user_pic_change_div_right .img_class{
+	display: block;
+	float: left;
+	position: relative;
+	top: 75px;
+	left: 0;
+	border: 1;
+}
+#user_pic_change_div_right .after form{
+	float: left;
+	position: relative;
+	left: 300px;
+	top: 30px;
+}
+#user_pic_change_div_right .commit_button{
+	width: 200px;
+	height: 30px;
+	float: right;
+	position: relative;
+	right: 500px;
+	bottom: 20px;
 }
 
 #user_info_div_right{

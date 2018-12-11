@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/pages/index.jsp=UTF-8
-encoding//src/com/fc/cps/dao/jdbc/IndexNewsDaoImpl.java=UTF-8
+encoding//src/com/fc/cps/dao/impl/IndexNewsDaoImpl.java=UTF-8
 encoding//src/com/fc/cps/entity/IndexNewsEntity.java=UTF-8
 encoding/<project>=UTF-8

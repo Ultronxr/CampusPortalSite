@@ -1,4 +1,4 @@
-package com.fc.cps.dao.jdbc;
+package com.fc.cps.dao.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,7 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
-import com.fc.cps.dao.jdbc.JDBCUtil;
+
+import com.fc.cps.dao.impl.JDBCUtil;
 
 public class JDBCBase {
 

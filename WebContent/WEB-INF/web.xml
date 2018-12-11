@@ -71,4 +71,12 @@
     <servlet-name>icCardAction</servlet-name>
     <url-pattern>/icCard.jhtml</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>userInfosPicAction</servlet-name>
+    <servlet-class>com.fc.cps.action.UserInfosPicAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userInfosPicAction</servlet-name>
+    <url-pattern>/userInfosPic.jhtml</url-pattern>
+  </servlet-mapping>
 </web-app>
