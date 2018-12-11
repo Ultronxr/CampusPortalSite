@@ -116,7 +116,7 @@ public class UserDaoImpl extends JDBCBase implements UserDao{
 	
 	
 	@Override
-	public boolean stringToImgFile(String imgString, UserLoginEntity userLoginEntity) {
+	public boolean stringToImgFile(String imgString, String path, UserLoginEntity userLoginEntity) {
 		
 		//获取base64数据头，获取图片后缀名
 		String imgStringHeader = imgString.substring(imgString.indexOf("data:image/"), imgString.indexOf(",")+1);
@@ -126,17 +126,23 @@ public class UserDaoImpl extends JDBCBase implements UserDao{
 		
 		BASE64Decoder decoder = new BASE64Decoder();
 		String imgFileName = userLoginEntity.getSchool_id()+"."+imgType;
-		String imgFilePath = "D:\\"+imgFileName;
+		String imgFilePath = path+imgFileName;
+		String imgFilePath_copy = "D:\\JAVA\\eclipse_javaee\\workspace\\CampusPortalSite\\WebContent\\img_cache\\user_pic\\"+imgFileName;
 		try{
             //Base64解码 
             byte[] b = decoder.decodeBuffer(imgString.substring(imgStringHeader.length()));
             for(int i = 0; i < b.length; ++i) {
                 if(b[i] < 0) b[i] += 256;
             }
+            
             OutputStream out = new FileOutputStream(imgFilePath);
             out.write(b);
             out.flush();
             out.close();
+            OutputStream out_copy = new FileOutputStream(imgFilePath_copy);
+            out_copy.write(b);
+            out_copy.flush();
+            out_copy.close();
             
             //更新数据库信息
             updateUserEntityInfos("pic_url", imgFileName, "school_id", userLoginEntity.getSchool_id());

@@ -44,11 +44,9 @@ public class UserInfosPicAction extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String path = request.getSession().getServletContext().getRealPath("");
-		System.out.println("path");
-		
-		UserLoginEntity userLoginEntity = (UserLoginEntity)request.getSession().getAttribute("UserLoginEntity");
 		PrintWriter pw = response.getWriter();
+		UserLoginEntity userLoginEntity = (UserLoginEntity)request.getSession().getAttribute("UserLoginEntity");
+		String path = request.getSession().getServletContext().getRealPath("")+"\\img_cache\\user_pic\\";
 		String errMsg = "{\"result\":\"-1\"}", okMsg = "{\"result\":\"1\"}";
 		
 		String imgString = request.getParameter("img_data");
@@ -60,7 +58,7 @@ public class UserInfosPicAction extends HttpServlet {
 			return;
 		}
 		
-		boolean flag = userDao.stringToImgFile(imgString, userLoginEntity);
+		boolean flag = userDao.stringToImgFile(imgString, path, userLoginEntity);
 		
 		if(flag) {
 			System.out.println("保存为图片文件完成。");

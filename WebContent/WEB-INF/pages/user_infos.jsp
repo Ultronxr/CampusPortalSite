@@ -48,9 +48,9 @@
     <div id="container">
     	<div id="container_left">
     		<ul id="container_left_ul">
-    			<li class="select_up"><a href="#">更换头像</a></li>
-    			<li class=""><a href="#">个人资料</a></li>
-    			<li class=""><a href="#">密码设置</a></li>
+    			<li class="select_up"><a href="#" onclick="change_ul('1')">更换头像</a></li>
+    			<li class=""><a href="#" onclick="change_ul('2')">个人资料</a></li>
+    			<li class=""><a href="#" onclick="change_ul('3')">密码设置</a></li>
     		</ul>
     	</div>
     	<div id="container_right">
@@ -68,19 +68,19 @@
 		    	<button type="button" id="commit_button" class="commit_button" onclick="commit_user_pic()">提交</button>
 		    </div>
 		    
+		    <div id="user_infos_change_div_right" style="display: none;">
+		    
+		    
+		    
+		    </div>
+		    
+		    <div id="user_pwd_change_div_right" style="display: none;">
+		    
+		    
+		    </div>
+		    
     	</div>
     </div>
     
-    
-    
-    
-    
-    <div id="user_info_div_right">
-    
-    </div>
-
-	<div id="user_pwd_change_div_right">
-		
-	</div>
 </body>
 </html>

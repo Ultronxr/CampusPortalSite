@@ -28,5 +28,5 @@ public interface UserDao {
 	/**
 	 * 把用户提交的新的图片base64字符串转换为图片文件保存
 	 */
-	boolean stringToImgFile(String imgString, UserLoginEntity userLoginEntity); 
+	boolean stringToImgFile(String imgString, String path, UserLoginEntity userLoginEntity); 
 }
