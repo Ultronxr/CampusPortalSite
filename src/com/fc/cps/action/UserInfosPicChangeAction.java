@@ -29,12 +29,12 @@ import com.mysql.cj.Session;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
-public class UserInfosPicAction extends HttpServlet {
+public class UserInfosPicChangeAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private UserDao userDao = new UserDaoImpl();
        
-    public UserInfosPicAction() {
+    public UserInfosPicChangeAction() {
         super();
     }
 

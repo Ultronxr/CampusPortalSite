@@ -38,7 +38,8 @@ public class IndexAction extends HttpServlet {
 		String keyword_temp = request.getParameter("keyword");
 		//对应第一次访问servlet（初始化）的情况，没有keyword参数，则设置为空字符串（不是null）
 		if(keyword_temp == null)  keyword_temp = "";
-		String keyword = new String(keyword_temp.getBytes("iso-8859-1"), "utf-8");
+		//String keyword = new String(keyword_temp.getBytes("iso-8859-1"), "utf-8");
+		String keyword = keyword_temp;
 		
 		//根据关键字获取新闻列表，并进行反序处理（新闻按时间从新到旧排列）
 		List<IndexNewsEntity> indexNewsList = indexNewsDao.getIndexNewsListByKeyword(keyword);

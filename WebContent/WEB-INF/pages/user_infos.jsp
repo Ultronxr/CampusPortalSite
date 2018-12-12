@@ -16,7 +16,7 @@
 	
 	<link rel="stylesheet" href="/CampusPortalSite/css/user_infos.css" />
 	<script src="/CampusPortalSite/js/user_infos.js" charset="utf-8"></script>
-	
+	<script src="/CampusPortalSite/js/md5.js" charset="utf-8"></script>
 	<title>CPS校园门户网站-个人信息页面</title>
 </head>
 <body>
@@ -55,6 +55,7 @@
     	</div>
     	<div id="container_right">
     	
+    	
     		<div id="user_pic_change_div_right">
     			<div class="before">
 		   			<label class="label_class">当前头像</label>
@@ -67,8 +68,6 @@
 		    	</div>
 		    	<button type="button" id="pic_commit_button" class="pic_commit_button" onclick="commit_user_pic()">提交</button>
 		    </div>
-		    
-		    
 		    
 		    
 		    <div id="user_infos_change_div_right" style="display: none;">
@@ -107,11 +106,13 @@
 		    </div>
 		    
 		    
-		    
-		    
 		    <div id="user_pwd_change_div_right" style="display: none;">
-		    
-		    
+		    	<form id="pwd_change_form">
+		    		<div><label>输入原密码：</label><input type="password" id="pwd_old_input"></div>
+		    		<div><label>输入新密码：</label><input type="password" id="pwd_new_input"></div>
+		    		<div><label>重复新密码：</label><input type="password" id="pwd_new_repeat_input"></div>
+		    		<div><button type="button" onclick="pwd_change()">提交</button></div>
+		    	</form>
 		    </div>
 		    
     	</div>

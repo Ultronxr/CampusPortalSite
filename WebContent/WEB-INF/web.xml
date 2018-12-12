@@ -72,12 +72,12 @@
     <url-pattern>/icCard.jhtml</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>userInfosPicAction</servlet-name>
-    <servlet-class>com.fc.cps.action.UserInfosPicAction</servlet-class>
+    <servlet-name>userInfosPicChangeAction</servlet-name>
+    <servlet-class>com.fc.cps.action.UserInfosPicChangeAction</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>userInfosPicAction</servlet-name>
-    <url-pattern>/userInfosPic.jhtml</url-pattern>
+    <servlet-name>userInfosPicChangeAction</servlet-name>
+    <url-pattern>/userInfosPicChange.jhtml</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>userInfosUpdateAction</servlet-name>
@@ -87,4 +87,24 @@
     <servlet-name>userInfosUpdateAction</servlet-name>
     <url-pattern>/userInfosUpdate.jhtml</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>userInfosPwdChangeAction</servlet-name>
+    <servlet-class>com.fc.cps.action.UserInfosPwdChangeAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userInfosPwdChangeAction</servlet-name>
+    <url-pattern>/userInfosPwdChange.jhtml</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.fc.cps.filter.EncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

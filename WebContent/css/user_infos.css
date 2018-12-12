@@ -270,4 +270,33 @@
 	min-height: 500px;
 	background: #f4f4f4;
 }
+#pwd_change_form{
+	float: left;
+	position: relative;
+	left: 60px;
+	top: 70px;
+}
+#pwd_change_form label{
+	font-family: 宋体;
+}
+#pwd_change_form div{
+	margin-left: 50px;
+	margin-top: 45px;
+}
+#pwd_change_form input{
+	float:right;
+	height: 30px;
+	width: 400px;
+	font-family: consolas;
+	font-size: 18px;
+	margin-left: 30px;
+}
+#pwd_change_form button{
+	height: 30px;
+	width: 200px;
+	float: left;
+	position: relative;
+	left: 200px;
+}
+
 

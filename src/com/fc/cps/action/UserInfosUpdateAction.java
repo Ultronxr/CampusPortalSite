@@ -35,6 +35,7 @@ public class UserInfosUpdateAction extends HttpServlet {
 		array[cnt++] = request.getParameter("name");
 		array[cnt++] = request.getParameter("sex");
 		array[cnt++] = request.getParameter("age");
+		array[cnt++] = request.getParameter("id_id");
 		array[cnt++] = request.getParameter("politics_status");
 		array[cnt++] = request.getParameter("institute");
 		array[cnt++] = request.getParameter("department");
@@ -49,6 +50,7 @@ public class UserInfosUpdateAction extends HttpServlet {
 		userLoginEntity.getUserEntity().setName(array[cnt++]);
 		userLoginEntity.getUserEntity().setSex(array[cnt++]);
 		userLoginEntity.getUserEntity().setAge(Integer.valueOf(array[cnt++]));
+		userLoginEntity.getUserEntity().setId_id(array[cnt++]);
 		userLoginEntity.getUserEntity().setPolitics_status(array[cnt++]);
 		userLoginEntity.getUserEntity().setInstitute(array[cnt++]);
 		userLoginEntity.getUserEntity().setDepartment(array[cnt++]);

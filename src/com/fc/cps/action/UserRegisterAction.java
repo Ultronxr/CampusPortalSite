@@ -43,7 +43,13 @@ public class UserRegisterAction extends HttpServlet {
 		if(userEntity == null) { //用户名未冲突
 			flag = 1;
 		}
-		
+		if(flag == 1) {
+			UserEntity userEntityNew = new UserEntity();
+			userEntityNew.setSchool_id(username);
+			userEntityNew.setPassword(password);
+			userDao.insertUserEntityToMysql(userEntityNew);
+		}
+		System.out.println("获取用户注册请求： username="+username+" 注册是否成功："+flag);
 		printWriter.print("{\"result\":\""+flag+"\"}");
 		printWriter.flush();
 		printWriter.close();

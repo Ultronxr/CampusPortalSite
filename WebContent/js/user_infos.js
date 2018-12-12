@@ -50,7 +50,7 @@ function commit_user_pic() {
 	}
 	$.ajax({
 		type:"POST",
-		url:"/CampusPortalSite/userInfosPic.jhtml",
+		url:"/CampusPortalSite/userInfosPicChange.jhtml",
 		data:{img_data:img_obj},
 		dataType:'json',
 		success:function(msg){
@@ -83,30 +83,35 @@ function infos_change() {
 	$("#infos_change_button").parent().hide();
 	$("#infos_cancel_button").parent().show();
 	$("#user_infos_form input").removeAttr("disabled");
-	$("#id_id_input").attr("disabled","disabled");
 	$("#school_id_input").attr("disabled","disabled");
 	
 }
 function infos_submit() {
-	var name=$("#name_input").val(), sex=$("#sex_input").val(), age=$("#age_input").val(), politics_status=$("#politics_status_input").val(),
-		institute=$("#institute_input").val(), department=$("#department_input").val(), classs=$("#classs_input").val(),
-		phone_number=$("#phone_number_input").val(), qq_number=$("#qq_number_input").val(), email=$("#email_input").val(),
-		blog=$("#blog_input").val();
+	var name=$("#name_input").val(), sex=$("#sex_input").val(), age=$("#age_input").val(), id_id=$("#id_id_input").val(), 
+		politics_status=$("#politics_status_input").val(), institute=$("#institute_input").val(), department=$("#department_input").val(), 
+		classs=$("#classs_input").val(), phone_number=$("#phone_number_input").val(), qq_number=$("#qq_number_input").val(), 
+		email=$("#email_input").val(), blog=$("#blog_input").val();
 
-	if(name==null || sex==null || age==null || politics_status==null || institute==null || department==null || classs==null
-			|| name=="" || sex=="" || age=="" || politics_status=="" || institute=="" || department=="" || classs==""){
+	if(name==null || sex==null || age==null || id_id==null || politics_status==null || institute==null || department==null || classs==null
+			|| name=="" || sex=="" || age=="" || id_id=="" || politics_status=="" || institute=="" || department=="" || classs==""){
 		alert("请填写完所有必填信息再保存！")
 		return;
 	}
 	
 	var reg1 = /^[0-9]{1,3}$/, //年龄
-		reg2 = /^[0-9]{3}$/; //班级
+		reg2 = /^[0-9]{18}$/, //身份证号
+		reg3 = /^[0-9]{3}$/; //班级
+		
 	
 	if(!reg1.test(age) || (age<10||age>80)){
 		alert("请输入正确的年龄信息！");
 		return;
 	}
-	if(!reg1.test(classs)){
+	if(!reg2.test(id_id)){
+		alert("请输入正确的身份证号信息！");
+		return;
+	}
+	if(!reg3.test(classs)){
 		alert("请输入正确的班级信息！");
 		return;
 	}
@@ -114,7 +119,7 @@ function infos_submit() {
 	$.ajax({
 		type:"POST",
 		url:"/CampusPortalSite/userInfosUpdate.jhtml",
-		data:{name:name,sex:sex,age:age,politics_status:politics_status,institute:institute,department:department,classs:classs,
+		data:{name:name,sex:sex,age:age,id_id:id_id,politics_status:politics_status,institute:institute,department:department,classs:classs,
 			phone_number:phone_number,qq_number:qq_number,email:email,blog:blog},
 		dataType:'json',
 		success:function(msg){
@@ -145,7 +150,50 @@ function infos_cancel() {
 }
 
 
-
+function pwd_change() {
+	var pwd_old = $("#pwd_old_input").val(),
+		pwd_new = $("#pwd_new_input").val(),
+		pwd_new_repeat = $("#pwd_new_repeat_input").val();
+	
+	if(pwd_old==null || pwd_old==""){
+		alert("请先输入原密码！");
+		return;
+	}
+	if(pwd_new==null || pwd_new==""){
+		alert("请输入新密码！");
+		return;
+	}
+	var reg1 = /^[A-Za-z0-9_]{3,18}$/;
+	if(!reg1.test(pwd_new)){
+		alert("新的密码不合法！");
+		return;
+	}
+	if(pwd_new != pwd_new_repeat){
+		alert("两次输入的新密码不一致！");
+		return;
+	}
+	
+	var md5_pwd_old = hex_md5(pwd_old),
+		md5_pwd_new = hex_md5(pwd_new);
+	
+	$.ajax({
+		type:"POST",
+		url:"/CampusPortalSite/userInfosPwdChange.jhtml",
+		data:{md5_pwd_old:md5_pwd_old,md5_pwd_new:md5_pwd_new},
+		dataType:'json',
+		success:function(msg){
+			if(msg.result == "1"){
+				alert("修改成功！请重新登录！");
+				window.location.href="/CampusPortalSite/index.jhtml";
+			}
+			else if(msg.result == "-1"){
+				alert("原密码错误！");
+			}
+		}
+	});
+	
+	
+}
 
 
 

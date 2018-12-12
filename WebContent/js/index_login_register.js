@@ -118,6 +118,7 @@ function user_register_dialog(){
 		    				else if(msg.result=="0") 
 		    					$("#user_register_infos").text("该学号已存在，请输入新的学号！");
 		    				else if(msg.result=="1"){
+		    					$("#user_register_infos").text("注册成功！");
 		    					alert("注册成功！");
 		    					//location.reload();
 		    					window.location.href="/CampusPortalSite/index.jhtml";
