@@ -42,7 +42,6 @@
 			    <div class="drop-content">
 			        <a href="userInfos.jhtml" onclick="">&nbsp;&nbsp;个人资料</a>
 			        <a href="icCard.jhtml" onclick="">&nbsp;&nbsp;IC卡查询</a>
-			        <!-- <a href="javascript:void(0);" onclick="user_logout()">&nbsp;&nbsp;&nbsp;&nbsp;注销</a> -->
 			        <a href="userLogout.jhtml">&nbsp;&nbsp;&nbsp;&nbsp;注销</a>
 			    </div>
 		    </c:if>

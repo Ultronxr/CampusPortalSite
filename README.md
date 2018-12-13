@@ -1,4 +1,4 @@
 # Javaweb期末大作业_CPS校园门户网站
 
-## 不包含敏感配置文件*.properties
+## 上传到github时排除了配置文件
 

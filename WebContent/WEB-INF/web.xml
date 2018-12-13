@@ -95,6 +95,14 @@
     <servlet-name>userInfosPwdChangeAction</servlet-name>
     <url-pattern>/userInfosPwdChange.jhtml</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>icCardInfosAction</servlet-name>
+    <servlet-class>com.fc.cps.action.ICCardInfosAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>icCardInfosAction</servlet-name>
+    <url-pattern>/icCardInfos.jhtml</url-pattern>
+  </servlet-mapping>
   <filter>
     <filter-name>EncodingFilter</filter-name>
     <filter-class>com.fc.cps.filter.EncodingFilter</filter-class>
@@ -105,6 +113,18 @@
   </filter>
   <filter-mapping>
     <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>UserFilter</filter-name>
+    <filter-class>com.fc.cps.filter.UserFilter</filter-class>
+    <init-param>
+      <param-name>checked</param-name>
+      <param-value>/userInfos.jhtml;user_infos.jsp;/icCard.jhtml;iccard.jsp;/userInfosPicChange.jhtml;/userInfosUpdate.jhtml;/userInfosPwdChange.jhtml;</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>UserFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 </web-app>

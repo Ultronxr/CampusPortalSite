@@ -67,7 +67,7 @@ public class UserLoginAction extends HttpServlet {
 		printWriter.flush();
 		printWriter.close();
 		
-		System.out.println("获取用户登录请求：code="+code+" username="+username+" password="+password+" 登录是否成功："+flag + " 登录学号："+username);
+		System.out.println("获取用户登录请求：code="+code+" username="+username+" 登录是否成功："+flag);
 		
 	}
 
