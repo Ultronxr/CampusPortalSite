@@ -150,29 +150,48 @@
 	position: relative;
 	left: 400px;
 	top: 50px;
+	margin-bottom: 50px;
 }
-/* #container_right table{
+#container_right table{
 	width: 100%;
 	font-family: consolas;
-	font-size: 15px;
+	font-size: 17px;
 	border-collapse: collapse;
 	border:1px solid #0094ff;
 }
 #container_right table th{
-	text-align: left;
 	padding: .5em .5em;
     font-weight: bold;
     background: #66677c;
     color: #fff;
     border:1px solid #0094ff;
+    text-align: center;
 }
 #container_right table td{
     padding: .5em .5em;
     border-bottom: solid 1px #ccc;
     border:1px solid #0094ff;
-} */
-
-
-
+    text-align: center;
+}
+#iccard_records_table_length{
+	margin: 20px 20px;
+	font-family: consolas;
+	font-size: 20px;
+}
+#iccard_records_table_filter{
+	margin: 20px 20px;
+	font-family: consolas;
+	font-size: 20px;
+}
+#iccard_records_table_info{
+	margin: 10px 20px;
+	font-family: consolas;
+	font-size: 20px;
+}
+#iccard_records_table_paginate{
+	margin: 10px 20px;
+	font-family: consolas;
+	font-size: 20px;
+}
 
 

@@ -51,27 +51,38 @@
     <div id="container">
     	<div id="container_left">
     		<div id="iccard_infos_div">
-    			<div><label>IC卡ID：</label><p>3-16401010222</p></div>
-    			<div><label>IC卡余额：</label><p>58.3&nbsp;元</p></div>
+    			<c:if test="${ICCardInfosEntity==null}">
+    				<div><label>该账号无IC卡记录。</label></div>
+    			</c:if>
+    			<c:if test="${ICCardInfosEntity!=null}">
+    				<div><label>IC卡ID：</label><p>${ICCardInfosEntity.cardId}-${ICCardInfosEntity.studentId}</p></div>
+    				<div><label>IC卡余额：</label><p>${ICCardInfosEntity.money}&nbsp;元</p></div>
+    			</c:if>
     		</div>
     	</div>
     	<div id="container_right">
     		<table id="iccard_records_table" class="display">
 			    <thead>
 			        <tr>
-			            <th>Column 1</th>
-			            <th>Column 2</th>
+			            <th>卡号</th>
+			            <th>学号</th>
+			            <th>操作</th>
+			            <th>金额</th>
+			            <th>时间</th>
 			        </tr>
 			    </thead>
 			    <tbody>
-			        <tr>
-			            <td>Row 1 Data 1</td>
-			            <td>Row 1 Data 2</td>
-			        </tr>
-			        <tr>
-			            <td>Row 2 Data 1</td>
-			            <td>Row 2 Data 2</td>
-			        </tr>
+			    	<c:if test="${ICCardInfosEntity!=null}">
+			    		<c:forEach items="${ICCardInfosEntity.recordList}" var="record">
+					    	<tr>
+					    		<td>${ICCardInfosEntity.cardId}</td>
+					    		<td>${ICCardInfosEntity.studentId}</td>
+					            <td>${record.recordJudge}</td>
+					            <td>${record.recordMoney}</td>
+					            <td>${record.recordDate}</td>
+					        </tr>
+					    </c:forEach>
+			    	</c:if>
 			    </tbody>
 			</table>
     	</div>

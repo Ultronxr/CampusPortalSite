@@ -168,6 +168,10 @@ function pwd_change() {
 		alert("新的密码不合法！");
 		return;
 	}
+	if(pwd_old == pwd_new){
+		alert("新密码不能与原密码相同！");
+		return;
+	}
 	if(pwd_new != pwd_new_repeat){
 		alert("两次输入的新密码不一致！");
 		return;

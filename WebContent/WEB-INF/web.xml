@@ -95,14 +95,6 @@
     <servlet-name>userInfosPwdChangeAction</servlet-name>
     <url-pattern>/userInfosPwdChange.jhtml</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>icCardInfosAction</servlet-name>
-    <servlet-class>com.fc.cps.action.ICCardInfosAction</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>icCardInfosAction</servlet-name>
-    <url-pattern>/icCardInfos.jhtml</url-pattern>
-  </servlet-mapping>
   <filter>
     <filter-name>EncodingFilter</filter-name>
     <filter-class>com.fc.cps.filter.EncodingFilter</filter-class>
