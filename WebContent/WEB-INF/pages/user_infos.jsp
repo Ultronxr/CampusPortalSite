@@ -9,15 +9,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-ui.css" />
+	<title>CPS校园门户网站-个人信息页面</title>
+	
 	<script src="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-3.3.1.js" charset="utf-8"></script>
 	<script src="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-ui.js" charset="utf-8"></script>
-	<link rel="shortcut icon" href="img_cache/favicon.ico">
-	
-	<link rel="stylesheet" href="/CampusPortalSite/css/user_infos.css" />
 	<script src="/CampusPortalSite/js/user_infos.js" charset="utf-8"></script>
 	<script src="/CampusPortalSite/js/md5.js" charset="utf-8"></script>
-	<title>CPS校园门户网站-个人信息页面</title>
+	
+	<link rel="shortcut icon" href="img_cache/favicon.ico">
+	<link rel="stylesheet" href="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-ui.css" />
+	<link rel="stylesheet" href="/CampusPortalSite/css/user_infos.css" />
 </head>
 <body>
 	<div id="header">

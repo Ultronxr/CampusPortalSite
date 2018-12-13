@@ -9,16 +9,18 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-ui.css" />
-	<script src="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-3.3.1.js" charset="utf-8"></script>
-	<script src="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-ui.js" charset="utf-8"></script>
-	<link rel="shortcut icon" href="img_cache/favicon.ico">
-		
-	<link rel="stylesheet" href="/CampusPortalSite/DataTables-1.10.15/jquery.dataTables.css" />
-	<script src="/CampusPortalSite/DataTables-1.10.15/jquery.dataTables.js" charset="utf-8"></script>	
-	
-	<link rel="stylesheet" href="/CampusPortalSite/css/iccard.css" />
 	<title>CPS校园门户网站-IC卡查询页面</title>
+	
+	<script src="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-3.3.1.js" charset="utf-8"></script>
+	<script src="/CampusPortalSite/DataTables-1.10.15/media/js/jquery.js" charset="utf-8"></script>
+	<script src="/CampusPortalSite/DataTables-1.10.15/media/js/jquery.dataTables.js" charset="utf-8"></script>
+	<script src="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-ui.js" charset="utf-8"></script>
+	<script src="/CampusPortalSite/js/iccard.js" charset="utf-8"></script>
+	
+	<link rel="shortcut icon" href="img_cache/favicon.ico">
+	<link rel="stylesheet" href="/CampusPortalSite/DataTables-1.10.15/media/css/jquery.dataTables.css" />
+	<link rel="stylesheet" href="/CampusPortalSite/jquery3.3.1-jqueryui1.12.1/jquery-ui.css" />
+	<link rel="stylesheet" href="/CampusPortalSite/css/iccard.css" />
 </head>
 <body>
 	<div id="header">

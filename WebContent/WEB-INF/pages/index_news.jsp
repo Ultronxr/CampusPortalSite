@@ -8,6 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>新闻详情页</title>
+	
 	<link rel="stylesheet" href="/CampusPortalSite/css/index_news.css" />
 </head>
 <body>
