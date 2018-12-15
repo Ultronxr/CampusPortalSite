@@ -76,9 +76,9 @@
                 <p>宁波天气预报</p>
                 <iframe width="420" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=12&icon=1&py=zhenhai&num=2&site=12"></iframe>
             </div>
-            <div id="last_ip">
+            <!-- <div id="last_ip">
 
-            </div>
+            </div> -->
         </div>
         <div id="container_right">
 	        <div id="container_right_top">

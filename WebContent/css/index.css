@@ -125,6 +125,7 @@
     min-height: 800px;
     width: 300px;
     float: left;
+    position: fixed;
 }
 #user_infos{
     width: 290px;
